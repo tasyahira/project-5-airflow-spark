@@ -1,0 +1,62 @@
+[2024-02-26T20:34:14.317+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_airflow_dag.spark_submit_task manual__2024-02-26T20:34:08.345572+00:00 [queued]>
+[2024-02-26T20:34:14.323+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_airflow_dag.spark_submit_task manual__2024-02-26T20:34:08.345572+00:00 [queued]>
+[2024-02-26T20:34:14.324+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2024-02-26T20:34:14.333+0000] {taskinstance.py:1327} INFO - Executing <Task(SparkSubmitOperator): spark_submit_task> on 2024-02-26 20:34:08.345572+00:00
+[2024-02-26T20:34:14.354+0000] {standard_task_runner.py:57} INFO - Started process 11555 to run task
+[2024-02-26T20:34:14.357+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'spark_airflow_dag', 'spark_submit_task', 'manual__2024-02-26T20:34:08.345572+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/spark_etl_dag.py', '--cfg-path', '/tmp/tmp_qa0f5up']
+[2024-02-26T20:34:14.358+0000] {standard_task_runner.py:85} INFO - Job 20: Subtask spark_submit_task
+[2024-02-26T20:34:14.377+0000] {logging_mixin.py:150} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-02-26T20:34:14.419+0000] {task_command.py:410} INFO - Running <TaskInstance: spark_airflow_dag.spark_submit_task manual__2024-02-26T20:34:08.345572+00:00 [running]> on host 1db92e94aa46
+[2024-02-26T20:34:14.506+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='spark_airflow_dag' AIRFLOW_CTX_TASK_ID='spark_submit_task' AIRFLOW_CTX_EXECUTION_DATE='2024-02-26T20:34:08.345572+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-26T20:34:08.345572+00:00'
+[2024-02-26T20:34:14.515+0000] {base.py:73} INFO - Using connection ID 'spark_default' for task execution.
+[2024-02-26T20:34:14.523+0000] {spark_submit.py:339} INFO - Spark-Submit cmd: spark-submit --master local[*] --name arrow-spark /opt/airflow/dags/spark_etl.py
+[2024-02-26T20:34:14.726+0000] {spark_submit.py:490} INFO - /home/airflow/.local/lib/python3.7/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2024-02-26T20:34:20.559+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:20 INFO SparkContext: Running Spark version 3.4.2
+[2024-02-26T20:34:20.663+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:20 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-02-26T20:34:20.750+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:20 INFO ResourceUtils: ==============================================================
+[2024-02-26T20:34:20.751+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:20 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-02-26T20:34:20.751+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:20 INFO ResourceUtils: ==============================================================
+[2024-02-26T20:34:20.751+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:20 INFO SparkContext: Submitted application: DataExtraction
+[2024-02-26T20:34:20.772+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:20 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-02-26T20:34:20.781+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:20 INFO ResourceProfile: Limiting resource is cpu
+[2024-02-26T20:34:20.781+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:20 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-02-26T20:34:20.854+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:20 INFO SecurityManager: Changing view acls to: airflow
+[2024-02-26T20:34:20.855+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:20 INFO SecurityManager: Changing modify acls to: airflow
+[2024-02-26T20:34:20.855+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:20 INFO SecurityManager: Changing view acls groups to:
+[2024-02-26T20:34:20.856+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:20 INFO SecurityManager: Changing modify acls groups to:
+[2024-02-26T20:34:20.856+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:20 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: airflow; groups with view permissions: EMPTY; users with modify permissions: airflow; groups with modify permissions: EMPTY
+[2024-02-26T20:34:21.402+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:21 INFO Utils: Successfully started service 'sparkDriver' on port 33995.
+[2024-02-26T20:34:21.496+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:21 INFO SparkEnv: Registering MapOutputTracker
+[2024-02-26T20:34:21.615+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:21 INFO SparkEnv: Registering BlockManagerMaster
+[2024-02-26T20:34:21.634+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:21 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-02-26T20:34:21.635+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:21 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-02-26T20:34:21.641+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:21 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-02-26T20:34:21.677+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:21 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-b751abcb-d715-46e8-81aa-3d1192b54fa2
+[2024-02-26T20:34:21.713+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:21 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2024-02-26T20:34:21.738+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:21 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-02-26T20:34:21.863+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:21 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2024-02-26T20:34:21.913+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:21 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2024-02-26T20:34:22.251+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:22 INFO Executor: Starting executor ID driver on host 1db92e94aa46
+[2024-02-26T20:34:22.264+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:22 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+[2024-02-26T20:34:22.295+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:22 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 34845.
+[2024-02-26T20:34:22.295+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:22 INFO NettyBlockTransferService: Server created on 1db92e94aa46:34845
+[2024-02-26T20:34:22.325+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:22 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2024-02-26T20:34:22.346+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:22 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 1db92e94aa46, 34845, None)
+[2024-02-26T20:34:22.355+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:22 INFO BlockManagerMasterEndpoint: Registering block manager 1db92e94aa46:34845 with 434.4 MiB RAM, BlockManagerId(driver, 1db92e94aa46, 34845, None)
+[2024-02-26T20:34:22.378+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:22 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 1db92e94aa46, 34845, None)
+[2024-02-26T20:34:22.380+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:22 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 1db92e94aa46, 34845, None)
+[2024-02-26T20:34:22.817+0000] {spark_submit.py:490} INFO - /home/airflow/.local/lib/python3.7/site-packages/pyspark/python/lib/pyspark.zip/pyspark/context.py:317: FutureWarning: Python 3.7 support is deprecated in Spark 3.4.
+[2024-02-26T20:34:22.818+0000] {spark_submit.py:490} INFO - warnings.warn("Python 3.7 support is deprecated in Spark 3.4.", FutureWarning)
+[2024-02-26T20:34:27.309+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:27 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2024-02-26T20:34:27.317+0000] {spark_submit.py:490} INFO - 24/02/26 20:34:27 INFO SharedState: Warehouse path is 'file:/opt/airflow/spark-warehouse'.
+[2024-02-26T20:34:58.557+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 157, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 422, in submit
+    f"Cannot execute: {self._mask_cmd(spark_submit_cmd)}. Error code is: {returncode}."
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master local[*] --name arrow-spark /opt/airflow/dags/spark_etl.py. Error code is: -9.
+[2024-02-26T20:34:58.572+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=spark_airflow_dag, task_id=spark_submit_task, execution_date=20240226T203408, start_date=20240226T203414, end_date=20240226T203458
+[2024-02-26T20:34:58.626+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 20 for task spark_submit_task (Cannot execute: spark-submit --master local[*] --name arrow-spark /opt/airflow/dags/spark_etl.py. Error code is: -9.; 11555)
+[2024-02-26T20:34:58.673+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2024-02-26T20:34:58.765+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

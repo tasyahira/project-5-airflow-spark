@@ -1,0 +1,48 @@
+[2024-02-27T00:10:08.861+0000] {logging_mixin.py:150} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-02-27T00:10:09.484+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_airflow_dag.spark_submit_task scheduled__2024-02-26T00:00:00+00:00 [queued]>
+[2024-02-27T00:10:09.490+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_airflow_dag.spark_submit_task scheduled__2024-02-26T00:00:00+00:00 [queued]>
+[2024-02-27T00:10:09.491+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2024-02-27T00:10:09.502+0000] {taskinstance.py:1327} INFO - Executing <Task(SparkSubmitOperator): spark_submit_task> on 2024-02-26 00:00:00+00:00
+[2024-02-27T00:10:09.506+0000] {standard_task_runner.py:57} INFO - Started process 12384 to run task
+[2024-02-27T00:10:09.509+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'spark_airflow_dag', 'spark_submit_task', 'scheduled__2024-02-26T00:00:00+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/spark_etl_dag.py', '--cfg-path', '/tmp/tmp5_6v6026']
+[2024-02-27T00:10:09.510+0000] {standard_task_runner.py:85} INFO - Job 21: Subtask spark_submit_task
+[2024-02-27T00:10:09.531+0000] {logging_mixin.py:150} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-02-27T00:10:09.557+0000] {task_command.py:410} INFO - Running <TaskInstance: spark_airflow_dag.spark_submit_task scheduled__2024-02-26T00:00:00+00:00 [running]> on host 1db92e94aa46
+[2024-02-27T00:10:09.587+0000] {logging_mixin.py:150} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-02-27T00:10:09.646+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='spark_airflow_dag' AIRFLOW_CTX_TASK_ID='spark_submit_task' AIRFLOW_CTX_EXECUTION_DATE='2024-02-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-26T00:00:00+00:00'
+[2024-02-27T00:10:09.653+0000] {base.py:73} INFO - Using connection ID 'spark_default' for task execution.
+[2024-02-27T00:10:09.660+0000] {spark_submit.py:339} INFO - Spark-Submit cmd: spark-submit --master local[*] --name arrow-spark /opt/airflow/dags/spark_etl.py
+[2024-02-27T00:10:09.848+0000] {spark_submit.py:490} INFO - /home/airflow/.local/lib/python3.7/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2024-02-27T00:27:08.218+0000] {spark_submit.py:490} INFO - 24/02/27 00:27:08 INFO SparkContext: Running Spark version 3.4.2
+[2024-02-27T00:27:08.325+0000] {spark_submit.py:490} INFO - 24/02/27 00:27:08 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-02-27T00:27:08.426+0000] {spark_submit.py:490} INFO - 24/02/27 00:27:08 INFO ResourceUtils: ==============================================================
+[2024-02-27T00:27:08.427+0000] {spark_submit.py:490} INFO - 24/02/27 00:27:08 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-02-27T00:27:08.427+0000] {spark_submit.py:490} INFO - 24/02/27 00:27:08 INFO ResourceUtils: ==============================================================
+[2024-02-27T00:27:08.427+0000] {spark_submit.py:490} INFO - 24/02/27 00:27:08 INFO SparkContext: Submitted application: DataExtraction
+[2024-02-27T00:27:08.448+0000] {spark_submit.py:490} INFO - 24/02/27 00:27:08 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-02-27T00:27:08.457+0000] {spark_submit.py:490} INFO - 24/02/27 00:27:08 INFO ResourceProfile: Limiting resource is cpu
+[2024-02-27T00:27:08.458+0000] {spark_submit.py:490} INFO - 24/02/27 00:27:08 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-02-27T00:27:08.551+0000] {spark_submit.py:490} INFO - 24/02/27 00:27:08 INFO SecurityManager: Changing view acls to: airflow
+[2024-02-27T00:27:08.552+0000] {spark_submit.py:490} INFO - 24/02/27 00:27:08 INFO SecurityManager: Changing modify acls to: airflow
+[2024-02-27T00:27:08.552+0000] {spark_submit.py:490} INFO - 24/02/27 00:27:08 INFO SecurityManager: Changing view acls groups to:
+[2024-02-27T00:27:08.553+0000] {spark_submit.py:490} INFO - 24/02/27 00:27:08 INFO SecurityManager: Changing modify acls groups to:
+[2024-02-27T00:27:08.553+0000] {spark_submit.py:490} INFO - 24/02/27 00:27:08 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: airflow; groups with view permissions: EMPTY; users with modify permissions: airflow; groups with modify permissions: EMPTY
+[2024-02-27T00:27:09.620+0000] {spark_submit.py:490} INFO - 24/02/27 00:27:09 INFO Utils: Successfully started service 'sparkDriver' on port 42821.
+[2024-02-27T00:27:09.789+0000] {spark_submit.py:490} INFO - 24/02/27 00:27:09 INFO SparkEnv: Registering MapOutputTracker
+[2024-02-27T00:27:09.827+0000] {spark_submit.py:490} INFO - 24/02/27 00:27:09 INFO SparkEnv: Registering BlockManagerMaster
+[2024-02-27T00:27:09.850+0000] {spark_submit.py:490} INFO - 24/02/27 00:27:09 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-02-27T00:27:09.850+0000] {spark_submit.py:490} INFO - 24/02/27 00:27:09 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-02-27T00:27:09.855+0000] {spark_submit.py:490} INFO - 24/02/27 00:27:09 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-02-27T00:27:09.918+0000] {spark_submit.py:490} INFO - 24/02/27 00:27:09 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-19198a4c-f4b3-4f78-93c0-d27a710f7ec1
+[2024-02-27T00:27:09.944+0000] {spark_submit.py:490} INFO - 24/02/27 00:27:09 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2024-02-27T00:27:10.119+0000] {spark_submit.py:490} INFO - 24/02/27 00:27:10 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-02-27T01:01:42.407+0000] {spark_submit.py:490} INFO - 24/02/27 01:01:42 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2024-02-27T01:01:42.993+0000] {spark_submit.py:490} INFO - 24/02/27 01:01:42 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2024-02-27T01:01:43.984+0000] {local_task_job_runner.py:292} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-02-27T01:01:44.126+0000] {process_utils.py:135} INFO - Sending Signals.SIGTERM to group 12384. PIDs of all processes in the group: [12385, 12448, 12384]
+[2024-02-27T01:01:44.130+0000] {process_utils.py:86} INFO - Sending the signal Signals.SIGTERM to group 12384
+[2024-02-27T01:01:44.152+0000] {taskinstance.py:1517} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-02-27T01:01:44.160+0000] {spark_submit.py:615} INFO - Sending kill signal to spark-submit
+[2024-02-27T01:01:44.393+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=12384, status='terminated', exitcode=0, started='00:10:08') (12384) terminated with exit code 0
+[2024-02-27T01:01:44.394+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=12448, status='terminated', started='00:10:21') (12448) terminated with exit code None
+[2024-02-27T01:01:44.394+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=12385, status='terminated', started='00:10:09') (12385) terminated with exit code None

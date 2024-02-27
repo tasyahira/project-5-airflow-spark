@@ -1,0 +1,37 @@
+[2024-02-25T14:50:39.677+0000] {logging_mixin.py:150} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-02-25T14:50:40.577+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_airflow_dag.spark_submit_task scheduled__2024-02-24T00:00:00+00:00 [queued]>
+[2024-02-25T14:50:40.597+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_airflow_dag.spark_submit_task scheduled__2024-02-24T00:00:00+00:00 [queued]>
+[2024-02-25T14:50:40.598+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2024-02-25T14:50:40.642+0000] {taskinstance.py:1327} INFO - Executing <Task(SparkSubmitOperator): spark_submit_task> on 2024-02-24 00:00:00+00:00
+[2024-02-25T14:50:40.668+0000] {standard_task_runner.py:57} INFO - Started process 171 to run task
+[2024-02-25T14:50:40.678+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'spark_airflow_dag', 'spark_submit_task', 'scheduled__2024-02-24T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/spark_etl_dag.py', '--cfg-path', '/tmp/tmpu1w4me1z']
+[2024-02-25T14:50:40.680+0000] {standard_task_runner.py:85} INFO - Job 2: Subtask spark_submit_task
+[2024-02-25T14:50:40.760+0000] {logging_mixin.py:150} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-02-25T14:50:42.501+0000] {task_command.py:410} INFO - Running <TaskInstance: spark_airflow_dag.spark_submit_task scheduled__2024-02-24T00:00:00+00:00 [running]> on host 1db92e94aa46
+[2024-02-25T14:50:42.545+0000] {logging_mixin.py:150} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-02-25T14:50:42.786+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='spark_airflow_dag' AIRFLOW_CTX_TASK_ID='spark_submit_task' AIRFLOW_CTX_EXECUTION_DATE='2024-02-24T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-24T00:00:00+00:00'
+[2024-02-25T14:50:42.824+0000] {base.py:73} INFO - Using connection ID 'spark_default' for task execution.
+[2024-02-25T14:50:42.855+0000] {spark_submit.py:339} INFO - Spark-Submit cmd: spark-submit --master yarn --conf spark.master=spark://spark-master:7077 --name arrow-spark --queue root.default /opt/airflow/dags/spark_etl.py
+[2024-02-25T14:50:44.162+0000] {spark_submit.py:490} INFO - /home/airflow/.local/lib/python3.7/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2024-02-25T14:51:00.281+0000] {spark_submit.py:490} INFO - Exception in thread "main" org.apache.spark.SparkException: When running with master 'yarn' either HADOOP_CONF_DIR or YARN_CONF_DIR must be set in the environment.
+[2024-02-25T14:51:00.292+0000] {spark_submit.py:490} INFO - at org.apache.spark.deploy.SparkSubmitArguments.error(SparkSubmitArguments.scala:650)
+[2024-02-25T14:51:00.292+0000] {spark_submit.py:490} INFO - at org.apache.spark.deploy.SparkSubmitArguments.validateSubmitArguments(SparkSubmitArguments.scala:281)
+[2024-02-25T14:51:00.292+0000] {spark_submit.py:490} INFO - at org.apache.spark.deploy.SparkSubmitArguments.validateArguments(SparkSubmitArguments.scala:237)
+[2024-02-25T14:51:00.292+0000] {spark_submit.py:490} INFO - at org.apache.spark.deploy.SparkSubmitArguments.<init>(SparkSubmitArguments.scala:122)
+[2024-02-25T14:51:00.292+0000] {spark_submit.py:490} INFO - at org.apache.spark.deploy.SparkSubmit$$anon$2$$anon$3.<init>(SparkSubmit.scala:1094)
+[2024-02-25T14:51:00.293+0000] {spark_submit.py:490} INFO - at org.apache.spark.deploy.SparkSubmit$$anon$2.parseArguments(SparkSubmit.scala:1094)
+[2024-02-25T14:51:00.293+0000] {spark_submit.py:490} INFO - at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:86)
+[2024-02-25T14:51:00.293+0000] {spark_submit.py:490} INFO - at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1111)
+[2024-02-25T14:51:00.293+0000] {spark_submit.py:490} INFO - at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1120)
+[2024-02-25T14:51:00.293+0000] {spark_submit.py:490} INFO - at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+[2024-02-25T14:51:00.367+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 157, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 422, in submit
+    f"Cannot execute: {self._mask_cmd(spark_submit_cmd)}. Error code is: {returncode}."
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master yarn --conf spark.master=spark://spark-master:7077 --name arrow-spark --queue root.default /opt/airflow/dags/spark_etl.py. Error code is: 1.
+[2024-02-25T14:51:00.376+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=spark_airflow_dag, task_id=spark_submit_task, execution_date=20240224T000000, start_date=20240225T145040, end_date=20240225T145100
+[2024-02-25T14:51:00.399+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 2 for task spark_submit_task (Cannot execute: spark-submit --master yarn --conf spark.master=spark://spark-master:7077 --name arrow-spark --queue root.default /opt/airflow/dags/spark_etl.py. Error code is: 1.; 171)
+[2024-02-25T14:51:00.416+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2024-02-25T14:51:00.464+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
